@@ -3,12 +3,14 @@
 #include "buyer.h"
 
 enum PrimaryPrompt{LOGIN, REGISTER, EXIT};
-
+enum RegisterPrompt{CREATE_BUYER, CREATE_SELLER, BACK};
 using namespace std;
 
 int main() {
     //create a loop prompt 
     PrimaryPrompt prompt = LOGIN;
+    RegisterPrompt regPrompt = CREATE_BUYER;
+
     while (prompt != EXIT) {
         cout << "Select an option: " << endl;
         cout << "1. Login" << endl;
@@ -73,7 +75,31 @@ int main() {
                 **/
                 break;
             case REGISTER:
-                cout << "Register selected." << endl;
+                regPrompt = CREATE_BUYER; // reset regPrompt to CREATE_BUYER when entering register menu
+                while (regPrompt != BACK){
+                    cout << "Register selected. " << endl;
+                    cout << "Select an option: " << endl;
+                    cout << "1. Create Buyer Account" << endl;
+                    cout << "2. Create Seller Account" << endl;
+                    cout << "3. Back" << endl;
+                    int regChoice;
+                    cin >> regChoice;
+                    regPrompt = static_cast<RegisterPrompt>(regChoice - 1);
+                    switch (regPrompt) {
+                        case CREATE_BUYER:
+                            cout << "Create Buyer Account selected." << endl;
+                            break;
+                        case CREATE_SELLER:
+                            cout << "Create Seller Account selected." << endl;
+                            break;
+                        case BACK:
+                            cout << "Back selected." << endl;
+                            break;
+                        default:
+                            cout << "Invalid option." << endl;
+                            break;
+                    }
+                }
                 /* if register is selected then went throuhh registration process:
                 1. Create a new Buyer Account
                 Must provides: Name, Home Address, Phone number, Email
