@@ -93,5 +93,5 @@ int main() {
 
     //BankCustomer customer1(1, "Alice", 1000.0);
     //Buyer buyer1(1, customer1.getName(), customer1);
-    //return 0;
+    return 1;
 }
