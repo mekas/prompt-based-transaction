@@ -26,10 +26,11 @@ add_global_arguments(cpp_args, language : 'cpp')
 app_sources = [
     'main.cpp',
     'item.h',
-    'bank_customer.h', 
+    'bank_customer.h',
     'bank_customer.cpp',
     'bank.h',
-    'item.h', 'seller.h'
+    'item.h', 
+    'seller.h'
 # Add other source files here, e.g., 'src/helper.cpp'
 ]
 

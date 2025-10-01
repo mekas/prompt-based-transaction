@@ -59,6 +59,7 @@ int main() {
                 Display confirmation dialogue
                 If confirmed, delete account and return to main menu
                 If not, return to Buyer menu
+
                 assume user is logged in as Seller for now
                 9. Check Inventory
                 10. Add Item to Inventory
@@ -77,12 +78,14 @@ int main() {
                 1. Create a new Buyer Account
                 Must provides: Name, Home Address, Phone number, Email
                 2. Option to create a Seller Account (will be linked to Buyer account)
-                Must provides: Store Name, Store Address, Store Phone number, Store Email
+                Must Provides 1: Home Address, Phone number, Email
+                Must provides 2: Store Name, Store Address, Store Phone number, Store Email
+                Must provides 3: initial deposit amount
                 After finished immediately logged in as Buyer/Seller
                 */
                 break;
             case EXIT:
-                cout << "Exiting." << std::endl;
+                cout << "Exiting." << endl;
                 break;
             default:
                 cout << "Invalid option." << endl;
